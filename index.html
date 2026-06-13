@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ne peut pas partir</title>
 
 <style>
@@ -18,7 +21,12 @@ font-family:serif;
 background:#f7f4ef;
 color:#222;
 line-height:1.9;
+overflow-x:hidden;
 }
+
+/* ---------------- */
+/* Navigation */
+/* ---------------- */
 
 nav{
 position:fixed;
@@ -29,8 +37,8 @@ padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(5px);
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(8px);
 z-index:1000;
 }
 
@@ -38,6 +46,7 @@ z-index:1000;
 color:white;
 text-decoration:none;
 font-size:1.2rem;
+letter-spacing:1px;
 }
 
 .menu{
@@ -48,89 +57,259 @@ gap:25px;
 .menu a{
 color:white;
 text-decoration:none;
+transition:.3s;
 }
 
+.menu a:hover{
+opacity:.7;
+}
+
+/* ---------------- */
+/* Hero */
+/* ---------------- */
+
 .hero{
+position:relative;
 height:100vh;
+overflow:hidden;
+}
 
-background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(0,0,0,.55)
-),
-url("nepeutpaspartir-workshop-hero.png");
+/* 最初の静止画 */
 
+.hero-image{
+
+position:absolute;
+inset:0;
+
+background-image:url("nepeutpaspartir-workshop-hero.png");
 background-size:cover;
 background-position:center;
 
-display:flex;
-align-items:flex-end;
+animation:fadeOut 3s forwards;
+
+z-index:-1;
 }
+
+/* 動画 */
+
+.hero video{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+min-width:100%;
+min-height:100%;
+
+transform:translate(-50%,-50%);
+
+object-fit:cover;
+
+opacity:0;
+
+animation:fadeIn 3s forwards;
+animation-delay:2.5s;
+
+z-index:-2;
+}
+
+/* オーバーレイ */
+
+.overlay{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+rgba(0,0,0,.25),
+rgba(0,0,0,.55)
+);
+
+z-index:0;
+}
+
+@keyframes fadeOut{
+
+0%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+}
+
+}
+
+@keyframes fadeIn{
+
+0%{
+opacity:0;
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+/* ---------------- */
+/* Hero Text */
+/* ---------------- */
 
 .hero-content{
-padding:8%;
+
+position:absolute;
+
+left:8%;
+bottom:12%;
+
 color:white;
-max-width:900px;
+
+max-width:800px;
+
+z-index:10;
+
 }
 
-.hero h1{
+.hero-content h1{
+
 font-size:5rem;
 font-weight:normal;
-margin-bottom:20px;
+
+margin-bottom:25px;
+
 }
 
-.hero p{
+.hero-content p{
+
 font-size:1.4rem;
+line-height:1.8;
+
 }
+
+/* ---------------- */
+/* Content */
+/* ---------------- */
 
 .section{
+
 max-width:900px;
 margin:auto;
+
 padding:120px 30px;
+
 }
 
 .section h2{
+
 font-size:2rem;
 font-weight:normal;
+
 margin-bottom:40px;
+
+}
+
+.section p{
+
+margin-bottom:25px;
+
 }
 
 .quote{
+
 margin:60px 0;
+
 padding:40px;
+
 background:white;
+
 border-left:4px solid #444;
+
 font-size:1.2rem;
+
 }
 
 .links{
+
 display:flex;
 gap:20px;
 flex-wrap:wrap;
+
 margin-top:40px;
+
 }
 
 .btn{
+
 display:inline-block;
+
 padding:14px 28px;
+
 border:1px solid #222;
+
 text-decoration:none;
+
 color:#222;
+
+transition:.3s;
+
 }
 
 .btn:hover{
+
 background:#222;
 color:white;
+
 }
 
+/* ---------------- */
+/* Footer */
+/* ---------------- */
+
 footer{
+
 background:#111;
 color:#aaa;
+
 text-align:center;
+
 padding:60px;
+
+}
+
+/* ---------------- */
+/* Mobile */
+/* ---------------- */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:3rem;
+}
+
+.hero-content p{
+font-size:1.1rem;
+}
+
+.menu{
+display:none;
+}
+
+.section{
+padding:80px 25px;
+}
+
+.quote{
+padding:30px;
+font-size:1.05rem;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -154,6 +333,16 @@ Ne peut pas partir
 </nav>
 
 <section class="hero">
+
+<div class="hero-image"></div>
+
+<video autoplay muted loop playsinline>
+
+<source src="hero.mp4" type="video/mp4">
+
+</video>
+
+<div class="overlay"></div>
 
 <div class="hero-content">
 
@@ -215,4 +404,5 @@ Contact
 </footer>
 
 </body>
+
 </html>
