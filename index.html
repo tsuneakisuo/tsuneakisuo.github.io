@@ -1,16 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ne peut pas partir</title>
+
+<style>
+body{
+    margin:0;
+    font-family: serif;
+    background:#f5f3ef;
+    color:#222;
+    line-height:1.8;
+}
+
+.hero{
+    height:100vh;
+    background:url("image.png") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-inner{
+    text-align:center;
+    background:rgba(255,255,255,0.75);
+    padding:40px;
+}
+
+h1{
+    margin:0;
+    font-size:3rem;
+}
+
+.catch{
+    font-size:1.2rem;
+    margin-top:20px;
+}
+
+.section{
+    max-width:900px;
+    margin:auto;
+    padding:80px 30px;
+}
+
+.section h2{
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 24px;
+    text-decoration:none;
+    color:white;
+    background:#222;
+}
+
+.footer{
+    text-align:center;
+    padding:50px;
+    background:#222;
+    color:white;
+}
+</style>
 </head>
+
 <body>
 
+<section class="hero">
+<div class="hero-inner">
 <h1>Ne peut pas partir</h1>
 
-<p>
-京都・綾部で靴を制作しています。
+<p class="catch">
+履くためだけの靴ではない。<br>
+その人の時間に寄り添う靴。
 </p>
+</div>
+</section>
+
+<section class="section">
+
+<h2>About</h2>
+
+<p>
+京都・綾部の工房で、一足ずつ手製靴を制作しています。
+</p>
+
+<p>
+金属加工職人として長く働いた後、
+革という素材と出会い、
+現在は Ne peut pas partir として制作活動を続けています。
+</p>
+
+<p>
+ものづくりとは、
+ただ形を作ることではなく、
+人の時間や記憶に寄り添うことだと考えています。
+</p>
+
+<div class="buttons">
+
+<a class="btn"
+href="https://www.instagram.com/nepeutpaspartir/"
+target="_blank">
+Instagram
+</a>
+
+<a class="btn"
+href="https://note.com/ne_peut_pas"
+target="_blank">
+note
+</a>
+
+</div>
+
+</section>
+
+<div class="footer">
+© Ne peut pas partir
+</div>
 
 </body>
 </html>
