@@ -2,7 +2,6 @@
 <html lang="ja">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,44 +16,90 @@ box-sizing:border-box;
 }
 
 body{
-font-family: serif;
-background:#f8f6f2;
+font-family:serif;
+background:#f7f4ef;
 color:#222;
 line-height:1.9;
 }
 
-header{
-padding:30px 8%;
-border-bottom:1px solid #ddd;
-background:white;
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(5px);
+z-index:1000;
 }
 
 .logo{
-font-size:1.5rem;
+color:white;
 text-decoration:none;
-color:#222;
+font-size:1.2rem;
+}
+
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
 }
 
 .hero{
-padding:120px 8% 80px;
-background:#f0ede7;
+
+height:60vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.3),
+rgba(0,0,0,.55)
+),
+url("profile.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:flex-end;
+}
+
+.hero-content{
+padding:8%;
+color:white;
 }
 
 .hero h1{
-font-size:3.5rem;
+font-size:4rem;
 font-weight:normal;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:1.2rem;
-color:#666;
 }
 
 .container{
-max-width:900px;
+max-width:1000px;
 margin:auto;
 padding:100px 30px;
+}
+
+.profile-image{
+
+width:320px;
+max-width:100%;
+
+margin:0 auto 60px;
+
+display:block;
+
+border-radius:4px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.15);
+
 }
 
 .container h2{
@@ -69,19 +114,18 @@ font-size:1.1rem;
 }
 
 .quote{
-font-size:1.4rem;
-font-style:italic;
-padding:40px;
-border-left:3px solid #444;
-margin:60px 0;
+margin:80px 0;
+padding:50px;
 background:white;
+border-left:4px solid #444;
+font-size:1.3rem;
 }
 
 .links{
-margin-top:80px;
 display:flex;
-gap:20px;
 flex-wrap:wrap;
+gap:20px;
+margin-top:60px;
 }
 
 .btn{
@@ -99,87 +143,97 @@ color:white;
 }
 
 footer{
-margin-top:100px;
-padding:50px;
-text-align:center;
 background:#111;
 color:#aaa;
+text-align:center;
+padding:60px;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:2.4rem;
+font-size:2.6rem;
+}
+
+.menu{
+display:none;
 }
 
 .container{
-padding:60px 25px;
+padding:70px 25px;
+}
+
+.quote{
+padding:30px;
+font-size:1.1rem;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
+<nav>
 
 <a class="logo" href="index.html">
-
 Ne peut pas partir
-
 </a>
 
-</header>
+<div class="menu">
+
+<a href="index.html">Home</a>
+
+<a href="https://note.com/ne_peut_pas" target="_blank">
+Journal
+</a>
+
+<a href="https://www.instagram.com/nepeutpaspartir/" target="_blank">
+Instagram
+</a>
+
+</div>
+
+</nav>
 
 <section class="hero">
 
+<div class="hero-content">
+
 <h1>Profile</h1>
 
-<p>
-職人としての歩み
-</p>
+</div>
 
 </section>
 
 <section class="container">
 
+<img src="profile.jpg" class="profile-image">
+
 <h2>周防 恒明</h2>
 
 <p>
 1976年生まれ。
-京都・綾部に工房を構え、
-手製靴ブランド「Ne peut pas partir」として
-制作活動を行っています。
+京都・綾部で手製靴ブランド
+「Ne peut pas partir」を主宰しています。
 </p>
 
 <p>
 私は長く金属加工の職人として働いてきました。
+図面通りに正確なものを作る世界で技術を学び、
+素材と向き合う姿勢を身につけました。
 </p>
 
 <p>
-図面通りに正確なものを作る仕事の中で、
-多くの技術や経験を積み重ねてきましたが、
-次第に「もっと人の近くにあるものを作りたい」
-という思いを持つようになりました。
-</p>
-
-<p>
-そんな中で出会ったのが靴でした。
+その後、もっと人の暮らしに近いものを作りたいという思いから、
+靴づくりの道へ進みました。
 </p>
 
 <p>
 靴は単なる道具ではありません。
-その人が歩いた時間を受け止め、
-暮らしや記憶とともに変化していく存在です。
-</p>
-
-<p>
-私は靴を作るとき、
-形や機能だけではなく、
-その人の人生に寄り添うものを作りたいと考えています。
+歩いた時間を受け止め、
+その人の記憶とともに変化していく存在です。
 </p>
 
 <div class="quote">
@@ -194,45 +248,32 @@ Ne peut pas partir
 </div>
 
 <p>
-工房には長年使い続けている道具があり、
-棚には木型が並び、
-革の匂いが漂っています。
+工房には木型が並び、
+革の匂いが漂い、
+長年使い続けた道具があります。
 </p>
 
 <p>
-その場所で、
-一足ずつ手を動かしながら
-制作を続けています。
-</p>
-
-<p>
-Ne peut pas partir は、
-そんな思いから生まれたブランドです。
+その場所で一足ずつ、
+静かに手を動かしながら制作を続けています。
 </p>
 
 <div class="links">
 
-<a class="btn"
-href="https://www.instagram.com/nepeutpaspartir/"
-target="_blank">
-
-Instagram
-
+<a class="btn" href="index.html">
+Home
 </a>
 
 <a class="btn"
 href="https://note.com/ne_peut_pas"
 target="_blank">
-
-note
-
+Journal
 </a>
 
 <a class="btn"
-href="index.html">
-
-Home
-
+href="https://www.instagram.com/nepeutpaspartir/"
+target="_blank">
+Instagram
 </a>
 
 </div>
