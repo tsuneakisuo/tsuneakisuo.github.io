@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Journal | Ne peut pas partir</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:serif;
+background:#f7f4ef;
+color:#222;
+line-height:1.9;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(5px);
+z-index:1000;
+}
+
+.logo{
+color:white;
+text-decoration:none;
+font-size:1.2rem;
+}
+
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+
+height:50vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.3),
+rgba(0,0,0,.55)
+),
+url("nepeutpaspartir-workshop-hero.png");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:flex-end;
+}
+
+.hero-content{
+padding:8%;
+color:white;
+}
+
+.hero h1{
+font-size:4rem;
+font-weight:normal;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:100px 30px;
+}
+
+.container h2{
+font-size:2rem;
+font-weight:normal;
+margin-bottom:40px;
+}
+
+.container p{
+margin-bottom:30px;
+font-size:1.1rem;
+}
+
+.note-box{
+background:white;
+padding:50px;
+margin-top:40px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+border:1px solid #222;
+text-decoration:none;
+color:#222;
+transition:.3s;
+}
+
+.btn:hover{
+background:#222;
+color:white;
+}
+
+footer{
+background:#111;
+color:#aaa;
+text-align:center;
+padding:60px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.6rem;
+}
+
+.menu{
+display:none;
+}
+
+.container{
+padding:70px 25px;
+}
+
+.note-box{
+padding:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<a class="logo" href="index.html">
+Ne peut pas partir
+</a>
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+
+<a href="profile.html">Profile</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Journal</h1>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2>工房の日々</h2>
+
+<p>
+
+靴づくりのこと。
+
+ものづくりについて考えていること。
+
+工房で過ごす時間の中で感じたこと。
+
+日々の記録を note に綴っています。
+
+</p>
+
+<div class="note-box">
+
+<h3>noteを読む</h3>
+
+<p>
+
+Ne peut pas partir の制作や暮らし、
+職人として考えていることを発信しています。
+
+</p>
+
+<a class="btn"
+href="https://note.com/ne_peut_pas"
+target="_blank">
+
+noteへ行く
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© Ne peut pas partir
+
+</footer>
+
+</body>
+</html>
