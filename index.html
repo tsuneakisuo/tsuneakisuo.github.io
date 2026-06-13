@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ne peut pas partir</title>
 
 <style>
@@ -16,30 +15,62 @@ box-sizing:border-box;
 
 body{
 font-family: serif;
-background:#f8f6f2;
+background:#f7f4ef;
 color:#222;
-line-height:1.8;
+line-height:1.9;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(5px);
+z-index:1000;
+}
+
+.logo{
+color:white;
+text-decoration:none;
+font-size:1.2rem;
+}
+
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
 }
 
 .hero{
 height:100vh;
+
 background:
 linear-gradient(
 rgba(0,0,0,0.25),
-rgba(0,0,0,0.45)
+rgba(0,0,0,0.55)
 ),
 url("nepeutpaspartir-workshop-hero.png");
 
 background-size:cover;
 background-position:center;
+
 display:flex;
 align-items:flex-end;
 }
 
-.hero-text{
+.hero-content{
 padding:8%;
 color:white;
-max-width:800px;
+max-width:900px;
 }
 
 .hero h1{
@@ -49,31 +80,34 @@ margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.8rem;
-line-height:1.6;
+font-size:1.5rem;
 }
 
 .section{
-max-width:900px;
+max-width:1000px;
 margin:auto;
-padding:100px 30px;
+padding:120px 30px;
 }
 
 .section h2{
 font-size:2rem;
-margin-bottom:40px;
 font-weight:normal;
+margin-bottom:40px;
 }
 
-.about{
-font-size:1.15rem;
+.quote{
+margin:80px 0;
+padding:50px;
+background:white;
+border-left:4px solid #444;
+font-size:1.3rem;
 }
 
 .links{
-margin-top:50px;
 display:flex;
 gap:20px;
 flex-wrap:wrap;
+margin-top:50px;
 }
 
 .btn{
@@ -82,7 +116,6 @@ padding:14px 28px;
 border:1px solid #222;
 text-decoration:none;
 color:#222;
-transition:.3s;
 }
 
 .btn:hover{
@@ -90,11 +123,11 @@ background:#222;
 color:white;
 }
 
-.footer{
+footer{
+background:#111;
+color:#bbb;
 text-align:center;
 padding:60px;
-background:#111;
-color:#ccc;
 }
 
 @media(max-width:768px){
@@ -104,25 +137,53 @@ font-size:3rem;
 }
 
 .hero p{
-font-size:1.2rem;
+font-size:1.1rem;
+}
+
+.menu{
+display:none;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+<nav>
+
+<a class="logo" href="index.html">
+Ne peut pas partir
+</a>
+
+<div class="menu">
+
+<a href="profile.html">Profile</a>
+
+<a href="https://note.com/ne_peut_pas" target="_blank">
+Journal
+</a>
+
+<a href="https://www.instagram.com/nepeutpaspartir/" target="_blank">
+Instagram
+</a>
+
+</div>
+
+</nav>
+
 <section class="hero">
 
-<div class="hero-text">
+<div class="hero-content">
 
 <h1>Ne peut pas partir</h1>
 
 <p>
-履くためだけの靴ではない。<br>
-その人の時間に寄り添う靴。
+ものを作ることは、<br>
+形を作ることではない。<br><br>
+人の時間や記憶に寄り添うことだと思っている。
 </p>
 
 </div>
@@ -133,33 +194,39 @@ font-size:1.2rem;
 
 <h2>About</h2>
 
-<div class="about">
-
 <p>
 京都・綾部の工房で、一足ずつ手製靴を制作しています。
 </p>
-
-<br>
 
 <p>
 金属加工職人として長く働いた後、
 革と向き合う仕事へ。
 </p>
 
-<p>
-ものづくりとは、
-ただ形を作ることではなく、
-人の時間や記憶に寄り添うことだと思っています。
-</p>
+<div class="quote">
 
-<p>
-Ne peut pas partir は、
-そんな思いから生まれた手製靴ブランドです。
-</p>
+履くためだけの靴ではない。<br><br>
+
+その人の時間に寄り添う靴。
 
 </div>
 
+<p>
+Ne peut pas partir は、
+そんな思いから生まれたブランドです。
+</p>
+
 <div class="links">
+
+<a class="btn" href="profile.html">
+Profile
+</a>
+
+<a class="btn"
+href="https://note.com/ne_peut_pas"
+target="_blank">
+Journal
+</a>
 
 <a class="btn"
 href="https://www.instagram.com/nepeutpaspartir/"
@@ -167,21 +234,15 @@ target="_blank">
 Instagram
 </a>
 
-<a class="btn"
-href="https://note.com/ne_peut_pas"
-target="_blank">
-note
-</a>
-
 </div>
 
 </section>
 
-<div class="footer">
+<footer>
 
 © Ne peut pas partir
 
-</div>
+</footer>
 
 </body>
 </html>
